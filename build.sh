@@ -1,0 +1,1 @@
+docker run -v $(pwd):/target -t dewb/monome-build "cd multipass/monome_euro/ansible; make"

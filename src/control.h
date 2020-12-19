@@ -19,6 +19,13 @@
 // shared types
 
 typedef struct {
+    u8 steps;
+    u8 fill;
+    u8 rotation;
+    u8 current_step;
+} ek_config_t;
+
+typedef struct {
 } preset_meta_t;
 
 typedef struct {
