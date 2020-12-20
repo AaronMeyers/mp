@@ -13,26 +13,39 @@
 
 // ----------------------------------------------------------------------------
 // firmware dependent stuff starts here
-
+#define ER_COUNT 4
+#define PATTERN_COUNT 16
 
 // ----------------------------------------------------------------------------
 // shared types
+
+typedef enum {
+    ek_steps,
+    ek_fill,
+    ek_rotation
+} ek_button_t;
 
 typedef struct {
     u8 steps;
     u8 fill;
     u8 rotation;
-    u8 current_step;
-} ek_config_t;
+    u8 index;
+} ek_er_t;
+
+typedef struct {
+    ek_er_t er[ER_COUNT];
+} ek_pattern_t;
+
+typedef struct {
+    ek_pattern_t p[PATTERN_COUNT];
+} preset_data_t;
 
 typedef struct {
 } preset_meta_t;
 
 typedef struct {
+    ek_button_t active_button[ER_COUNT];
 } shared_data_t;
-
-typedef struct {
-} preset_data_t;
 
 
 // ----------------------------------------------------------------------------
